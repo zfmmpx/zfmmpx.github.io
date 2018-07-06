@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>视口：viewport元标签 | 黄健个人技术小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
+  <meta name="description" content="&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0, minmun-scale=1.0 maximum-scale=1.0, user-scalable=0&amp;quot;&amp;gt;首先是苹果在safari上首次使用viewport元标签，然后安卓手机浏览器，chrome手机浏览器也">
+<meta name="keywords" content="我的笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="视口：viewport元标签">
+<meta property="og:url" content="http://yoursite.com/categories/前端/CSS/CSS一般性重要概念/视口：viewport元标签/index.html">
+<meta property="og:site_name" content="黄健个人技术小站">
+<meta property="og:description" content="&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0, minmun-scale=1.0 maximum-scale=1.0, user-scalable=0&amp;quot;&amp;gt;首先是苹果在safari上首次使用viewport元标签，然后安卓手机浏览器，chrome手机浏览器也">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://yoursite.com/images/layout%20viewport.png">
+<meta property="og:image" content="http://yoursite.com/images/visual%20viewport.png">
+<meta property="og:updated_time" content="2018-06-24T05:26:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="视口：viewport元标签">
+<meta name="twitter:description" content="&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0, minmun-scale=1.0 maximum-scale=1.0, user-scalable=0&amp;quot;&amp;gt;首先是苹果在safari上首次使用viewport元标签，然后安卓手机浏览器，chrome手机浏览器也">
+<meta name="twitter:image" content="http://yoursite.com/images/layout%20viewport.png">
+  
+    <link rel="alternate" href="/atom.xml" title="黄健个人技术小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">黄健个人技术小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work hard every weekday, have fun every weekend!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+          <a class="main-nav-link" href="/tags">tags</a>
+        
+        
+        <a href="/"> Home </a>
+        
+        <a href="/archives/"> Archives </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-视口：viewport元标签" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/前端/CSS/CSS一般性重要概念/视口：viewport元标签/" class="article-date">
+  <time datetime="2018-06-24T05:26:39.000Z" itemprop="datePublished">2018-06-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/CSS/">CSS</a>►<a class="article-category-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      视口：viewport元标签
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minmun-scale=1.0 maximum-scale=1.0, user-scalable=0&quot;&gt;</code><br>首先是苹果在safari上首次使用viewport元标签，然后安卓手机浏览器，chrome手机浏览器也跟着支持viewport元标签。<br>一旦设置了viewport元标签，layout viewport将不再起作用。代替的是设置的width值，相对于将html的宽设置为width属性的值，而且移动浏览器会将这个width的值放到一个屏幕的宽内，所以不会出现横向滚动条，除非你设置了maximum-scale的值大于initial-scale的值，然后手动进行放大，然后横向滚动条才会出现.<br>经过测试，iphone一个屏幕最大能显示1280px(640px的两倍，320px的4倍)，但width设置超出这个值，无论initial-scale设置多少，都会出现滚动条。<br><strong>pc端并没有视口这个概念，在css3媒体查询中：1.对于pc端，判断max-width等属性，根据的值就是pc端浏览器内容区的宽度 2.对于移动端，max-判断的依据是就是layout viewport的值</strong></p>
+<h2 id="参考：使用Flexible实现手淘H5页面的终端适配"><a href="#参考：使用Flexible实现手淘H5页面的终端适配" class="headerlink" title="参考：使用Flexible实现手淘H5页面的终端适配"></a><a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="noopener">参考：使用Flexible实现手淘H5页面的终端适配</a></h2><h1 id="总结出来的重点规则"><a href="#总结出来的重点规则" class="headerlink" title="总结出来的重点规则"></a>总结出来的重点规则</h1><p>initial-scale控制的是手机一个屏幕（不拖动滚动条的情况下）显示多少个像素，也就是visual viewport的值<br>一个屏幕显示多少个像素：<strong>visual viewport = ideal viewport / initial-scale</strong><br>例如：iphone的ideal viewport是320，initial-scale设为0.5时，visual viewport = 320 / 0.5 = 640px</p>
+<p>width设置的是layout viewport的值：<strong>layout viewport = width</strong></p>
+<p>width设置的是通过拖动横向滚动条，手机能最终显示多少个像素。也就是layout viewport的值<br>手机能最终显示多少个像（layout viewport）= width<br>手动放大相当于把width值放大了，所以layout wiewport的值也会增大<br><strong>在iphone5s上，width设置超出1280px这个值，无论initial-scale设置多少，都会出现滚动条。</strong><br><strong>在iphone6上，width设置超出1500px这个值，无论initial-scale设置多少，都会出现滚动条。</strong></p>
+<p><strong>当layout viewport &gt; visual viewport时，就会出现滚动条</strong><br><strong>当layout viewport &lt; visual viewport时，layout viewport = visual viewport</strong></p>
+<p><strong>如果没有视口元标签，移动端浏览器默认宽度为layout viewport的默认值980px</strong><br><strong>如果有视口元标签，移动端浏览器的宽度按照视口最终计算出来的layout viewport来计算</strong></p>
+<p><strong>媒体查询读取的是layout viewport的值</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;!DOCTYPE html&gt; --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 打开chrome的移动浏览器调试，用iphone，最终的div是粉色的； --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 因为计算出来的visiual viewport为320/0.5=640；  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 计算出来的layout viewport=width=641&gt;640, 所以最终layout viewport=641，并且会出现滚动条； --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 而且媒体查询判断的依据是layout viewport的值，所以第三个媒体查询（屏幕最小宽度值为641）生效。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=641, initial-scale=0.5"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div&#123;</span></span><br><span class="line"><span class="undefined">            width: 200px;</span></span><br><span class="line"><span class="undefined">            height: 200px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">media</span> screen and (min-width:<span class="number">320px</span>)&#123;</span></span><br><span class="line"><span class="undefined">            div&#123;</span></span><br><span class="line"><span class="undefined">                background-color: blue;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">media</span> screen and (min-width:<span class="number">321px</span>)&#123;</span></span><br><span class="line"><span class="undefined">            div&#123;</span></span><br><span class="line"><span class="undefined">                background-color: red;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">media</span> screen and (min-width:<span class="number">640px</span>)&#123;</span></span><br><span class="line"><span class="undefined">            div&#123;</span></span><br><span class="line"><span class="undefined">                background-color: yellow;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">media</span> screen and (min-width:<span class="number">641px</span>)&#123;</span></span><br><span class="line"><span class="undefined">            div&#123;</span></span><br><span class="line"><span class="undefined">                background-color: pink;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        @<span class="keyword">media</span> screen and (min-width:<span class="number">960px</span>)&#123;</span></span><br><span class="line"><span class="undefined">            div&#123;</span></span><br><span class="line"><span class="undefined">                background-color: green;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        *&#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="layout-viewport"><a href="#layout-viewport" class="headerlink" title="layout viewport"></a>layout viewport</h3><p>pc端的网页大多是按照1024像素宽来设置的，所以这些移动浏览器就决定默认情况下把viewport设为一个较宽的值，比如980px，这样的话即使是那些为桌面设计的网站也能在移动浏览器上正常显示了。ppk大神把这个浏览器默认的viewport叫做 layout viewport。这个layout viewport的宽度可以通过 document.documentElement.clientWidth 来获取。</p>
+<h3 id="visual-viewport"><a href="#visual-viewport" class="headerlink" title="visual viewport"></a>visual viewport</h3><p>有了layout viewport之后，在手机上能显示的内容称为visual viewport。这个不是真的“视口”，只是为方便起见而起的名字，<strong>它和layout viewport和ideal viewport有本质的区别：</strong></p>
+<ul>
+<li>layout viewport是移动浏览器本身就带有的，一般是980px，就算你不设置viewport元标签，这个视口依然存在，</li>
+<li>ideal viewport是真实的概念，其值是设备内置设置的，比如所有iphone它的ideal viewport都是320px的。可以通过<code>content=&quot;width=device-width&quot;</code>viewport值为ideal viewport的值，就可以在移动设备获得完美适配。</li>
+<li>visual viewport只是象征式意义的代表屏幕的可是区域，是ppk大神虚拟出来的一个概念，移动浏览器本身是没有这个属性的，也不能通过设置viewport元标签来设置</li>
+</ul>
+<p><img src="/images/layout viewport.png" alt="layout viewport"><br><img src="/images/visual viewport.png" alt="visual viewport"></p>
+<h2 id="ideal-viewport"><a href="#ideal-viewport" class="headerlink" title="ideal viewport"></a>ideal viewport</h2><p>有了上面这两个viewport之后，还是没有解决问题，因为这样还是没能为移动设备进行完美适配。<br>所谓的完美适配是：首先不需要用户缩放和横向滚动条就能正常的查看网站的所有内容；第二，显示的文字的大小是合适，比如一段14px大小的文字，不会因为在一个高密度像素的屏幕里显示得太小而无法看清。</p>
+<p>理想的情况是这段14px的文字无论是在何种密度屏幕，何种分辨率下，显示出来的大小都是差不多的。当然，不只是文字，其他元素像图片什么的也是这个道理。ppk把这个适合移动设备的viewport叫做ideal viewport。   </p>
+<p>ideal viewport并没有一个固定的尺寸，不同的设备拥有有不同的ideal viewport。所有的iphone的ideal viewport宽度都是320px，无论它的屏幕宽度是320还是640，无论是iphone5还是iphone8，也就是说，在iphone中，css中的320px就代表iphone屏幕的宽度。</p>
+<p>总结：ideal viewport的宽度等于移动设备的屏幕宽度，只要在css中把某一元素的宽度设为ideal viewport的宽度(单位用px)，那么这个元素的宽度就是设备屏幕的宽度了，也就是宽度为100%的效果。（但是一般的做法是：pc正常的按照设计图设计网页，然后设置viewport标签）</p>
+<h2 id="viewport元标签"><a href="#viewport元标签" class="headerlink" title="viewport元标签"></a>viewport元标签</h2><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, minmun-scale=1.0 maximum-scale=1.0, user-scalable=0&quot;&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>设置layout viewport的宽度，为一个正整数，或字符串”width-device”</td>
+</tr>
+<tr>
+<td>initial-scale</td>
+<td>设置页面的初始缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>minimum-scale</td>
+<td>允许用户的最小缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>maximum-scale</td>
+<td>允许用户的最大缩放值，为一个数字，可以带小数</td>
+</tr>
+<tr>
+<td>height</td>
+<td>设置layout viewport的高度，这个属性对我们并不重要，很少使用</td>
+</tr>
+<tr>
+<td>user-scalable</td>
+<td>是否允许用户进行缩放，值为”no”或”yes”, no 代表不允许，yes代表允许</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/categories/前端/CSS/CSS一般性重要概念/视口：viewport元标签/" data-id="cjj9o06kd005aakap43vky371" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/categories/前端/CSS/CSS一般性重要概念/css令元素水平、垂直居中/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          css令元素水平、垂直居中
+        
+      </div>
+    </a>
+  
+  
+    <a href="/categories/前端/CSS/CSS一般性重要概念/自适应和响应式的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自适应和响应式的区别</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JAVA基础/">JAVA基础</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/AJAX/">AJAX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/BOOTSTRAP/">BOOTSTRAP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS未解决的怪问题/">CSS未解决的怪问题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/DOM/">DOM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/">JQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/自己写的练习/">自己写的练习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JavaScript基础/">JavaScript基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/一些经验/">一些经验</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/前端基础/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/常见问题/">常见问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/我遇到的问题/">我遇到的问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/简历/">简历</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/">快捷键</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/vscode快捷键/">vscode快捷键</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/我的快捷键配置/">我的快捷键配置</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/学习ES6：Class的继承/">学习ES6：Class的继承</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/VSCode中使用Git实践，学会了效率翻倍/">VSCode中使用Git实践，学会了效率翻倍</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/一些经验/关于Mac上的VSCode编写Markdown会出现不可见字符问题/">关于Mac上的VSCode编写Markdown会出现不可见字符问题</a>
+          </li>
+        
+          <li>
+            <a href="/categories/uncategorized/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/JS/面向对象编程（三）：非构造函数的继承-对象之间继承的三种方法/">面向对象编程（三）：非构造函数的继承_对象之间继承的三种方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Huang Jian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

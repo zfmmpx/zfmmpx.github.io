@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>css令元素水平、垂直居中 | 黄健个人技术小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
+  <meta name="description" content="寻根溯源话布局一切都始于这样一个问题，怎样通过css优雅的进行垂直、水平居中，刚开始以为能用text-align: center、verticle-align: center，但是两个属性只能用于行内元素，对于块级元素的布局是无效的，而且verticle-align根本不是用来设置元素居中的（而是用来设置行内元素对齐字体那基线、中线、顶线等等各种线的，其中的规则复杂，只记住几个要点就好，不必深究）">
+<meta name="keywords" content="我的笔记,css怪问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css令元素水平、垂直居中">
+<meta property="og:url" content="http://yoursite.com/categories/前端/CSS/CSS一般性重要概念/css令元素水平、垂直居中/index.html">
+<meta property="og:site_name" content="黄健个人技术小站">
+<meta property="og:description" content="寻根溯源话布局一切都始于这样一个问题，怎样通过css优雅的进行垂直、水平居中，刚开始以为能用text-align: center、verticle-align: center，但是两个属性只能用于行内元素，对于块级元素的布局是无效的，而且verticle-align根本不是用来设置元素居中的（而是用来设置行内元素对齐字体那基线、中线、顶线等等各种线的，其中的规则复杂，只记住几个要点就好，不必深究）">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://yoursite.com/images/无效的设置居中方法.png">
+<meta property="og:image" content="http://yoursite.com/images/为什么图片会出现在离父盒子3px的地方.png">
+<meta property="og:image" content="http://yoursite.com/images/为什么图片会出现在离父盒子3px的地方_旁边加上匿名inline元素--hj字符.png">
+<meta property="og:image" content="http://yoursite.com/images/为什么图片会出现在离父盒子3px的地方_把hj放入到span中，给它黄色背景色.png">
+<meta property="og:image" content="http://yoursite.com/images/为什么图片会出现在离父盒子3px的地方_直接修改line-height值.png">
+<meta property="og:updated_time" content="2018-06-24T15:16:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css令元素水平、垂直居中">
+<meta name="twitter:description" content="寻根溯源话布局一切都始于这样一个问题，怎样通过css优雅的进行垂直、水平居中，刚开始以为能用text-align: center、verticle-align: center，但是两个属性只能用于行内元素，对于块级元素的布局是无效的，而且verticle-align根本不是用来设置元素居中的（而是用来设置行内元素对齐字体那基线、中线、顶线等等各种线的，其中的规则复杂，只记住几个要点就好，不必深究）">
+<meta name="twitter:image" content="http://yoursite.com/images/无效的设置居中方法.png">
+  
+    <link rel="alternate" href="/atom.xml" title="黄健个人技术小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">黄健个人技术小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work hard every weekday, have fun every weekend!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+          <a class="main-nav-link" href="/tags">tags</a>
+        
+        
+        <a href="/"> Home </a>
+        
+        <a href="/archives/"> Archives </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css令元素水平、垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/前端/CSS/CSS一般性重要概念/css令元素水平、垂直居中/" class="article-date">
+  <time datetime="2018-06-24T15:16:25.000Z" itemprop="datePublished">2018-06-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/CSS/">CSS</a>►<a class="article-category-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css令元素水平、垂直居中
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="寻根溯源话布局"><a href="#寻根溯源话布局" class="headerlink" title="寻根溯源话布局"></a>寻根溯源话布局</h2><p>一切都始于这样一个问题，怎样通过css优雅的进行垂直、水平居中，<br>刚开始以为能用text-align: center、verticle-align: center，但是两个属性只能用于行内元素，对于块级元素的布局是无效的，而且verticle-align根本不是用来设置元素居中的（而是用来设置行内元素对齐字体那基线、中线、顶线等等各种线的，其中的规则复杂，只记住几个要点就好，不必深究）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.father</span>&#123;</span></span><br><span class="line"><span class="undefined">        background-color: pink;</span></span><br><span class="line"><span class="undefined">        width: 400px;</span></span><br><span class="line"><span class="undefined">        height: 400px;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 对div无效，只是对行内元素或者里面的文字有效 */</span></span></span><br><span class="line"><span class="undefined">        text-align: center;</span></span><br><span class="line"><span class="css">        <span class="comment">/* 无效，根本就不是设置垂直居中的， */</span></span></span><br><span class="line"><span class="undefined">        vertical-align: middle;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.son</span>&#123;</span></span><br><span class="line"><span class="undefined">        background-color: red;</span></span><br><span class="line"><span class="undefined">        width: 200px;</span></span><br><span class="line"><span class="undefined">        height: 200px;</span></span><br><span class="line"><span class="undefined">        vertical-align: middle;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"father"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"son"</span>&gt;</span>这是一个行内元素<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"son"</span>&gt;</span>这是一个块级元素<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/无效的设置居中方法.png" alt="无效的设置居中方法"></p>
+<h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2><p><a href="https://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/" target="_blank" rel="noopener">CSS深入理解vertical-align和line-height的基友关系</a><br>vertical-align支持多种属性<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 关键字值 */</span></span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">baseline</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">sub</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">super</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">text-top</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">text-bottom</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">top</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">bottom</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* &lt;长度&gt; 值 */</span></span><br><span class="line"><span class="selector-tag">vertical-align</span>: 10<span class="selector-tag">em</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: 4<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* &lt;百分比&gt; 值 */</span></span><br><span class="line"><span class="selector-tag">vertical-align</span>: 10%;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 全局值 */</span></span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">inherit</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">initial</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">unset</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>其中vertical-align的百分比值不是相对于字体大小或其他什么属性技术的，而是相对于line-height计算的。</strong>举个例子：<br>{<br>  line-height: 30px;<br>  vertical-align: -10px;<br>}<br>相当于<br>{<br>  line-height: 30px;<br>  vertical-align: -3px;<br>}</p>
+<h3 id="基本现象"><a href="#基本现象" class="headerlink" title="基本现象"></a>基本现象</h3><p>HTML5声明（&lt;!DOCTYPE html&gt;）前提下, 会出现一个怪现象<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    div &#123;</span></span><br><span class="line"><span class="undefined">        background-color: pink;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"data:image/png;base64,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"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/为什么图片会出现在离父盒子3px的地方.png" alt="为什么图片会出现在离父盒子3px的地方"></p>
+<p>实际上，这段空白间隙就是vertical-align和line-height携手搞的鬼！<br>首先，大家一定要意识到这么一点：对于内联元素，vertical-align与line-height虽然看不见，但实际上「到处都是」！</p>
+<p>我们首先提出两个问题：</p>
+<ol>
+<li>vertical-align默认的对齐方式是？</li>
+<li>后面hj文字的高度从何而来？</li>
+</ol>
+<p>我们直接在图片后面加上一个匿名inline box, 也就是字符”hj”,这个字符和图片一样，都是内联元素（inline box）<br><img src="/images/为什么图片会出现在离父盒子3px的地方_旁边加上匿名inline元素--hj字符.png" alt="为什么图片会出现在离父盒子3px的地方_旁边加上匿名inline元素--hj字符"></p>
+<p>如果想准确点，再把hj放到一个span内给他黄色背景，发现表现是一样的<br><img src="/images/为什么图片会出现在离父盒子3px的地方_把hj放入到span中，给它黄色背景色.png" alt="为什么图片会出现在离父盒子3px的地方_把hj放入到span中，给它黄色背景色"></p>
+<ol>
+<li>vertical-align的默认值是baseline，也就是下面的h字母的下边缘,而字符hj本身是有高度的，于是，图片下面就留空了</li>
+<li>hj文字的高度是由行高决定的</li>
+</ol>
+<p>知道了问题所在，那么就可以对症下药了。解决办法：</p>
+<ol>
+<li>让vertical-align失效<br>图片默认是inline元素，而vertical-align对块状元素无感，所以设置图片为块状元素就行了。我们还可以直接设置浮动或绝对定位等（如果布局允许的话）。<br>img { display: block; }</li>
+<li>使用其他vertical-align的值<br>比方说bottom/middle/top都是可以的。但是super不可以<br>img { vertical-align: top }</li>
+<li>直接修改line-height值<br>下面的空隙高度，实际上是文字计算后的行高值和字母x下边缘的距离。因此，只要行高足够小，实际文字占据的高度的底部就会在h的上面(因为字体有font-size，默认为16px，所以设置行高为5px，行高比字体大小小，所以)，下面没有了高度区域支撑，自然，图片就会有容器底边贴合在一起了。比方说，我们设置行高5像素：<br>div { line-height: 5px; }<br><img src="/images/为什么图片会出现在离父盒子3px的地方_直接修改line-height值.png" alt="直接修改line-height值"></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/categories/前端/CSS/CSS一般性重要概念/css令元素水平、垂直居中/" data-id="cjj9o06ln006dakapeq5z0m56" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/categories/前端/CSS/CSS一般性重要概念/em和rem的区别/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          em和rem的区别
+        
+      </div>
+    </a>
+  
+  
+    <a href="/categories/前端/CSS/CSS一般性重要概念/视口：viewport元标签/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">视口：viewport元标签</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JAVA基础/">JAVA基础</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/AJAX/">AJAX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/BOOTSTRAP/">BOOTSTRAP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS未解决的怪问题/">CSS未解决的怪问题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/DOM/">DOM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/">JQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/自己写的练习/">自己写的练习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JavaScript基础/">JavaScript基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/一些经验/">一些经验</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/前端基础/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/常见问题/">常见问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/我遇到的问题/">我遇到的问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/简历/">简历</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/">快捷键</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/vscode快捷键/">vscode快捷键</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/我的快捷键配置/">我的快捷键配置</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/学习ES6：Class的继承/">学习ES6：Class的继承</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/VSCode中使用Git实践，学会了效率翻倍/">VSCode中使用Git实践，学会了效率翻倍</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/一些经验/关于Mac上的VSCode编写Markdown会出现不可见字符问题/">关于Mac上的VSCode编写Markdown会出现不可见字符问题</a>
+          </li>
+        
+          <li>
+            <a href="/categories/uncategorized/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/JS/面向对象编程（三）：非构造函数的继承-对象之间继承的三种方法/">面向对象编程（三）：非构造函数的继承_对象之间继承的三种方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Huang Jian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

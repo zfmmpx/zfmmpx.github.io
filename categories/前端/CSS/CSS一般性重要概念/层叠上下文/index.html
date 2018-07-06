@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>层叠上下文 | 黄健个人技术小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
+  <meta name="description" content="层叠上下文（stacking context）是一个概念，跟块状格式化上下文（BFC）类似 什么是层叠水平“层叠水平”英文称作”stacking level”，决定了同一个层叠上下文中元素在z轴上的显示顺序 层叠规则当元素发生层叠的时候，其覆盖关系遵循下面2个准则：  谁大谁上：当具有明显的层叠水平标示的时候，如识别的z-indx值，在同一个层叠上下文领域，层叠水平值大的那一个覆盖小的那一个。 后">
+<meta name="keywords" content="我的笔记,css怪问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="层叠上下文">
+<meta property="og:url" content="http://yoursite.com/categories/前端/CSS/CSS一般性重要概念/层叠上下文/index.html">
+<meta property="og:site_name" content="黄健个人技术小站">
+<meta property="og:description" content="层叠上下文（stacking context）是一个概念，跟块状格式化上下文（BFC）类似 什么是层叠水平“层叠水平”英文称作”stacking level”，决定了同一个层叠上下文中元素在z轴上的显示顺序 层叠规则当元素发生层叠的时候，其覆盖关系遵循下面2个准则：  谁大谁上：当具有明显的层叠水平标示的时候，如识别的z-indx值，在同一个层叠上下文领域，层叠水平值大的那一个覆盖小的那一个。 后">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://yoursite.com/images/层叠上下文.png">
+<meta property="og:image" content="http://yoursite.com/images/层叠上下文示例.png">
+<meta property="og:updated_time" content="2018-06-22T11:50:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="层叠上下文">
+<meta name="twitter:description" content="层叠上下文（stacking context）是一个概念，跟块状格式化上下文（BFC）类似 什么是层叠水平“层叠水平”英文称作”stacking level”，决定了同一个层叠上下文中元素在z轴上的显示顺序 层叠规则当元素发生层叠的时候，其覆盖关系遵循下面2个准则：  谁大谁上：当具有明显的层叠水平标示的时候，如识别的z-indx值，在同一个层叠上下文领域，层叠水平值大的那一个覆盖小的那一个。 后">
+<meta name="twitter:image" content="http://yoursite.com/images/层叠上下文.png">
+  
+    <link rel="alternate" href="/atom.xml" title="黄健个人技术小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">黄健个人技术小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work hard every weekday, have fun every weekend!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+          <a class="main-nav-link" href="/tags">tags</a>
+        
+        
+        <a href="/"> Home </a>
+        
+        <a href="/archives/"> Archives </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-层叠上下文" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/前端/CSS/CSS一般性重要概念/层叠上下文/" class="article-date">
+  <time datetime="2018-06-22T11:50:44.000Z" itemprop="datePublished">2018-06-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/CSS/">CSS</a>►<a class="article-category-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      层叠上下文
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>层叠上下文（stacking context）是一个概念，跟块状格式化上下文（BFC）类似</p>
+<h2 id="什么是层叠水平"><a href="#什么是层叠水平" class="headerlink" title="什么是层叠水平"></a>什么是层叠水平</h2><p>“层叠水平”英文称作”stacking level”，决定了同一个层叠上下文中元素在z轴上的显示顺序</p>
+<h2 id="层叠规则"><a href="#层叠规则" class="headerlink" title="层叠规则"></a>层叠规则</h2><p>当元素发生层叠的时候，其覆盖关系遵循下面2个准则：</p>
+<ol>
+<li>谁大谁上：当具有明显的层叠水平标示的时候，如识别的z-indx值，在同一个层叠上下文领域，层叠水平值大的那一个覆盖小的那一个。</li>
+<li>后来居上：当元素的层叠水平一致、层叠顺序相同的时候，在DOM流中处于后面的元素会覆盖前面的元素。<br>大概如下图：<br><img src="/images/层叠上下文.png" alt="层叠上下文"></li>
+</ol>
+<p><a href="https://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/" target="_blank" rel="noopener">参考：深入理解CSS中的层叠上下文和层叠顺序</a></p>
+<p>生成层叠上下文的方式 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context" target="_blank" rel="noopener">参考这里</a><br>A stacking context is formed, anywhere in the document, by any element in the following scenarios:</p>
+<ul>
+<li>Root element of document (HTML).</li>
+<li>Element with a position value “absolute” or “relative” and z-index value other than “auto”.</li>
+<li>Element with a position value “fixed” or “sticky” (sticky for all mobile browsers, but not older desktop).</li>
+<li>Element that is a child of a flex (flexbox) container, with z-index value other than “auto”.</li>
+<li>Element with a opacity value less than 1 (See the specification for opacity).</li>
+<li>Element with a mix-blend-mode value other than “normal”.</li>
+<li>Element with any of the following properties with value other than “none”:<ul>
+<li>transform</li>
+<li>filter</li>
+<li>perspective</li>
+<li>clip-path</li>
+<li>mask / mask-image / mask-border</li>
+</ul>
+</li>
+<li>Element with a isolation value “isolate”.</li>
+<li>Element with a -webkit-overflow-scrolling value “touch”.</li>
+<li>Element with a will-change value specifying any property that would create a stacking context on non-initial value (see this post).</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    div.title &#123;</span></span><br><span class="line"><span class="undefined">        background-color: lightgray;</span></span><br><span class="line"><span class="undefined">        /* 如果下面这个position: relative */</span></span><br><span class="line"><span class="undefined">        /* position: relative; */</span></span><br><span class="line"><span class="undefined">        border: 10px solid green;</span></span><br><span class="line"><span class="undefined">        display: inline-block;</span></span><br><span class="line"><span class="undefined">        width: 150px;</span></span><br><span class="line"><span class="undefined">        height: 40px;</span></span><br><span class="line"><span class="undefined">        text-align: center;</span></span><br><span class="line"><span class="undefined">        line-height: 40px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .content &#123;</span></span><br><span class="line"><span class="undefined">        /* 如果下面这个这个desplay:inline-block生效，将会是正常的情况，后来的元素排在上面，</span></span><br><span class="line"><span class="undefined">        也就是黑色边框排在绿色边框上面*/</span></span><br><span class="line"><span class="undefined">        /* display: inline-block; */</span></span><br><span class="line"><span class="undefined">        border: 10px solid #000;</span></span><br><span class="line"><span class="undefined">        width: 800px;</span></span><br><span class="line"><span class="undefined">        height: 300px;</span></span><br><span class="line"><span class="undefined">        margin-top: -10px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title current"</span> <span class="attr">num</span>=<span class="string">"tab1"</span>&gt;</span>one<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">num</span>=<span class="string">"tab2"</span>&gt;</span>two<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">num</span>=<span class="string">"tab3"</span>&gt;</span>Three<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">num</span>=<span class="string">"tab4"</span>&gt;</span>four<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content current"</span> <span class="attr">id</span>=<span class="string">"tab1"</span>&gt;</span></span><br><span class="line">    111111111</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/层叠上下文示例.png" alt="层叠上下文示例"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/categories/前端/CSS/CSS一般性重要概念/层叠上下文/" data-id="cjj9o06fu001qakapoqyrn460" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/categories/前端/CSS/CSS未解决的怪问题/inline-block元素间间距/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          inline或inline-block元素间间距
+        
+      </div>
+    </a>
+  
+  
+    <a href="/categories/前端/我遇到的问题/原生js和jq设置元素的属性/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">原生js和jq设置元素的属性的4种方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JAVA基础/">JAVA基础</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/AJAX/">AJAX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/BOOTSTRAP/">BOOTSTRAP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS未解决的怪问题/">CSS未解决的怪问题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/DOM/">DOM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/">JQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/自己写的练习/">自己写的练习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JavaScript基础/">JavaScript基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/一些经验/">一些经验</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/前端基础/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/常见问题/">常见问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/我遇到的问题/">我遇到的问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/简历/">简历</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/">快捷键</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/vscode快捷键/">vscode快捷键</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/我的快捷键配置/">我的快捷键配置</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/学习ES6：Class的继承/">学习ES6：Class的继承</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/VSCode中使用Git实践，学会了效率翻倍/">VSCode中使用Git实践，学会了效率翻倍</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/一些经验/关于Mac上的VSCode编写Markdown会出现不可见字符问题/">关于Mac上的VSCode编写Markdown会出现不可见字符问题</a>
+          </li>
+        
+          <li>
+            <a href="/categories/uncategorized/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/JS/面向对象编程（三）：非构造函数的继承-对象之间继承的三种方法/">面向对象编程（三）：非构造函数的继承_对象之间继承的三种方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Huang Jian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>06类与对象 | 黄健个人技术小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
+  <meta name="description" content="引用 如果一个变量是类类型,而非基本类型,那么这个变量又称为引用  继承 在LOL中，武器是物品的一种，也是有名称和价格的所以在设计类的时候，可以让武器继承物品，从而继承名称和价格属性 extends public class Weapon extends Item{}  方法重 方法的重载指的是方法名一样,但是参数类型不一样  构造方法 通过一个类创建一个对象,这个过程叫做实例化,实例化是通过构">
+<meta name="keywords" content="关键词">
+<meta property="og:type" content="article">
+<meta property="og:title" content="06类与对象">
+<meta property="og:url" content="http://yoursite.com/categories/JAVA/JAVA基础/06类与对象/index.html">
+<meta property="og:site_name" content="黄健个人技术小站">
+<meta property="og:description" content="引用 如果一个变量是类类型,而非基本类型,那么这个变量又称为引用  继承 在LOL中，武器是物品的一种，也是有名称和价格的所以在设计类的时候，可以让武器继承物品，从而继承名称和价格属性 extends public class Weapon extends Item{}  方法重 方法的重载指的是方法名一样,但是参数类型不一样  构造方法 通过一个类创建一个对象,这个过程叫做实例化,实例化是通过构">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-05-28T07:02:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="06类与对象">
+<meta name="twitter:description" content="引用 如果一个变量是类类型,而非基本类型,那么这个变量又称为引用  继承 在LOL中，武器是物品的一种，也是有名称和价格的所以在设计类的时候，可以让武器继承物品，从而继承名称和价格属性 extends public class Weapon extends Item{}  方法重 方法的重载指的是方法名一样,但是参数类型不一样  构造方法 通过一个类创建一个对象,这个过程叫做实例化,实例化是通过构">
+  
+    <link rel="alternate" href="/atom.xml" title="黄健个人技术小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">黄健个人技术小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work hard every weekday, have fun every weekend!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+          <a class="main-nav-link" href="/tags">tags</a>
+        
+        
+        <a href="/"> Home </a>
+        
+        <a href="/archives/"> Archives </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-06类与对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/JAVA/JAVA基础/06类与对象/" class="article-date">
+  <time datetime="2018-05-28T07:02:08.000Z" itemprop="datePublished">2018-05-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a>►<a class="article-category-link" href="/categories/JAVA/JAVA基础/">JAVA基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      06类与对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<li>如果一个变量是类类型,而非基本类型,那么这个变量又称为引用</li>
+</ul>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><ul>
+<li>在LOL中，武器是物品的一种，也是有名称和价格的<br>所以在设计类的时候，可以让武器继承物品，从而继承名称和价格属性</li>
+<li><strong>extends</strong> <code>public class Weapon extends Item{}</code></li>
+</ul>
+<h1 id="方法重"><a href="#方法重" class="headerlink" title="方法重"></a>方法重</h1><ul>
+<li>方法的重载指的是方法名一样,但是参数类型不一样</li>
+</ul>
+<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><ul>
+<li>通过一个类创建一个对象,这个过程叫做<strong>实例化</strong>,实例化是通过<strong>构造方法</strong>(又叫做<strong>构造器</strong>)实现的</li>
+</ul>
+<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><ul>
+<li>this相当于汉语中的”我”, 用来指向对象的虚拟地址.</li>
+</ul>
+<h1 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h1><ul>
+<li>参数也是变量,所以传参分为<strong>基本类型传参</strong>, <strong>类类型传参</strong></li>
+<li>基本类型传参, 在方法内，无法修改方法外的基本类型参数</li>
+<li>类类型传参又叫引用.</li>
+</ul>
+<h1 id="包"><a href="#包" class="headerlink" title="包"></a>包</h1><ul>
+<li>要使用其他包下的类, 必须import <code>import property.Weapon;</code></li>
+</ul>
+<h1 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h1><ul>
+<li>以Hero为例<ul>
+<li>自身：指的是Hero自己</li>
+<li>同包子类：ADHero这个类是Hero的子类，并且和Hero处于同一个包下</li>
+<li>不同包子类：Support这个类是Hero的子类，但是在另一个包下</li>
+<li>同包类： GiantDragon 这个类和Hero是同一个包，但是彼此没有继承关系</li>
+<li>其他类：Item这个类，在不同包，也没有继承关系的类</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">自身</th>
+<th style="text-align:center">同包子类</th>
+<th style="text-align:center">不同包子类</th>
+<th style="text-align:center">同包类</th>
+<th style="text-align:center">其他类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center"><font color="green">访问</font></td>
+<td style="text-align:center"><font color="red">继承<font></font></font></td>
+<td style="text-align:center"><font color="red">继承<font></font></font></td>
+<td style="text-align:center"><font color="red">访问<font></font></font></td>
+<td style="text-align:center"><font color="red">访问<font></font></font></td>
+</tr>
+<tr>
+<td style="text-align:center">package</td>
+<td style="text-align:center"><font color="green">访问</font></td>
+<td style="text-align:center"><font color="green">继承<font></font></font></td>
+<td style="text-align:center"><font color="red">继承<font></font></font></td>
+<td style="text-align:center"><font color="green">访问<font></font></font></td>
+<td style="text-align:center"><font color="red">访问<font></font></font></td>
+</tr>
+<tr>
+<td style="text-align:center">package</td>
+<td style="text-align:center"><font color="green">访问</font></td>
+<td style="text-align:center"><font color="green">继承<font></font></font></td>
+<td style="text-align:center"><font color="green">继承<font></font></font></td>
+<td style="text-align:center"><font color="green">访问<font></font></font></td>
+<td style="text-align:center"><font color="red">访问<font></font></font></td>
+</tr>
+<tr>
+<td style="text-align:center">package</td>
+<td style="text-align:center"><font color="green">访问</font></td>
+<td style="text-align:center"><font color="green">继承<font></font></font></td>
+<td style="text-align:center"><font color="green">继承<font></font></font></td>
+<td style="text-align:center"><font color="green">访问<font></font></font></td>
+<td style="text-align:center"><font color="green">访问<font></font></font></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>作用范围最小原则:能用private就用private，不行就放大一级，用package,再不行就用protected，最后用public。 这样就能把数据尽量的封装起来，没有必要露出来的，就不用露出来了</li>
+</ul>
+<h1 id="类属性"><a href="#类属性" class="headerlink" title="类属性"></a>类属性</h1><ul>
+<li>当一个属性被<strong>static</strong>修饰的时候，就叫做<strong>类属性</strong>，又叫做<strong>静态属性</strong><ul>
+<li>当一个属性被声明成类属性，那么<strong>所有的对象，都共享一个值</strong> </li>
+</ul>
+</li>
+<li>与对象属性对比： <ul>
+<li>不同对象的 对象属性 的值都可能不一样。 </li>
+<li>比如盖伦的hp 和 提莫的hp 是不一样的。 </li>
+<li>但是所有对象的类属性的值，都是一样的(比如 <code>static String copyright;</code>)</li>
+</ul>
+</li>
+</ul>
+<h1 id="类方法回过来再看"><a href="#类方法回过来再看" class="headerlink" title="类方法回过来再看"></a><strong>类方法回过来再看</strong></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/categories/JAVA/JAVA基础/06类与对象/" data-id="cjj9o06dg000cakapxbvrnlp4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/categories/前端/前端基础/01HTML概念/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          01HTML概念
+        
+      </div>
+    </a>
+  
+  
+    <a href="/categories/Git/learngit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">learngit</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JAVA基础/">JAVA基础</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/AJAX/">AJAX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/BOOTSTRAP/">BOOTSTRAP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS未解决的怪问题/">CSS未解决的怪问题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/DOM/">DOM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/">JQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/自己写的练习/">自己写的练习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JavaScript基础/">JavaScript基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/一些经验/">一些经验</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/前端基础/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/常见问题/">常见问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/我遇到的问题/">我遇到的问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/简历/">简历</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/">快捷键</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/vscode快捷键/">vscode快捷键</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/我的快捷键配置/">我的快捷键配置</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/学习ES6：Class的继承/">学习ES6：Class的继承</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/VSCode中使用Git实践，学会了效率翻倍/">VSCode中使用Git实践，学会了效率翻倍</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/一些经验/关于Mac上的VSCode编写Markdown会出现不可见字符问题/">关于Mac上的VSCode编写Markdown会出现不可见字符问题</a>
+          </li>
+        
+          <li>
+            <a href="/categories/uncategorized/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/JS/面向对象编程（三）：非构造函数的继承-对象之间继承的三种方法/">面向对象编程（三）：非构造函数的继承_对象之间继承的三种方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Huang Jian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

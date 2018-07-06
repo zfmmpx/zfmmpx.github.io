@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>面向对象编程（二）：构造函数的继承_对象之间继承的五种方法 | 黄健个人技术小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
+  <meta name="description" content="一、构造函数绑定每个函数都包含两个非继承而来的方法：apply()和call()。这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象。call()方法与apply()方法的作用相同，他们的区别仅在于接收参数">
+<meta name="keywords" content="我的笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象编程（二）：构造函数的继承_对象之间继承的五种方法">
+<meta property="og:url" content="http://yoursite.com/categories/前端/JS/面向对象编程（二）：构造函数的继承_对象之间继承的五种方法/index.html">
+<meta property="og:site_name" content="黄健个人技术小站">
+<meta property="og:description" content="一、构造函数绑定每个函数都包含两个非继承而来的方法：apply()和call()。这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象。call()方法与apply()方法的作用相同，他们的区别仅在于接收参数">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://yoursite.com/images/原型链_我的总结.jpg">
+<meta property="og:updated_time" content="2018-06-27T18:34:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象编程（二）：构造函数的继承_对象之间继承的五种方法">
+<meta name="twitter:description" content="一、构造函数绑定每个函数都包含两个非继承而来的方法：apply()和call()。这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象。call()方法与apply()方法的作用相同，他们的区别仅在于接收参数">
+<meta name="twitter:image" content="http://yoursite.com/images/原型链_我的总结.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="黄健个人技术小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">黄健个人技术小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work hard every weekday, have fun every weekend!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+          <a class="main-nav-link" href="/tags">tags</a>
+        
+        
+        <a href="/"> Home </a>
+        
+        <a href="/archives/"> Archives </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象编程（二）：构造函数的继承_对象之间继承的五种方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/前端/JS/面向对象编程（二）：构造函数的继承_对象之间继承的五种方法/" class="article-date">
+  <time datetime="2018-06-27T18:34:50.000Z" itemprop="datePublished">2018-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象编程（二）：构造函数的继承_对象之间继承的五种方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/原型链_我的总结.jpg" alt="原型链_我的总结"></p>
+<h3 id="一、构造函数绑定"><a href="#一、构造函数绑定" class="headerlink" title="一、构造函数绑定"></a>一、构造函数绑定</h3><blockquote><p>每个函数都包含两个<strong>非继承</strong>而来的方法：apply()和call()。这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。首先，apply()方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象。call()方法与apply()方法的作用相同，他们的区别仅在于接收参数的方式不同。对于call()方法而言，第一个参数是this值没有变化，变化的是其余参数都直接传递给函数。换句话说，在使用call()方法时，传递给函数的参数必须逐个列举出来。</p>
+<footer><strong>Nicholas C.Zakas</strong><cite>JavaScript高级程序设计（第3版）</cite></footer></blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在有一个“动物”对象的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.species = <span class="string">"动物"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 还有一个“猫”对象的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 怎样才能使“猫”继承“动物”呢？</span></span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 第一种是最简单的，使用call或apply方法，将父对象的构造函数绑定在子对象上，即在子对象构造函数上加上这一行</span></span><br><span class="line">    Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(cat1.species); <span class="comment">// 动物</span></span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">// 缺点：不能继承原型上的属性和方法；</span></span><br></pre></td></tr></table></figure>
+<h3 id="二、prototype模式"><a href="#二、prototype模式" class="headerlink" title="二、prototype模式"></a>二、prototype模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在有一个“动物”对象的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.species = <span class="string">"动物"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 还有一个“猫”对象的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 怎样才能使“猫”继承“动物”呢？</span></span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">// 如果“猫”的prototype对象，指向一个Animal的实例，那么所有“猫”的实例，就能继承Animal了。</span></span><br><span class="line"><span class="comment">// 代码的第一行，我们将Cat的prototype对象指向一个Animal实例</span></span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line"><span class="comment">// 它相当于完全删除了Cat.prototype对象原先的值(Object.prototype)，然后赋予了一个新值。但是，第二行又是什么意思呢</span></span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(cat1.species); <span class="comment">// 动物</span></span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Cat.prototype.constructor == Animal); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(Cat.prototype.constructor == Cat); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 注意：</span></span><br><span class="line">o.prototype = &#123;&#125;; <span class="comment">// 编程时务必遵守，如果替换了prototype对象：</span></span><br><span class="line">o.prototype.constructor = o; <span class="comment">// 那么下一步必然是为新的prototype对象加上constructor属性，并将这个属性手动指回原来的构造函数</span></span><br><span class="line"><span class="comment">// 缺点一：如果子对象的prototype对象上有属性或方法时，将被删除</span></span><br><span class="line"><span class="comment">// 缺点二：对于每一个实例对象，species属性都是一模一样的内容，每一次生成一个实例，都为重复的内容，多占用一些内存，这样既不环保，也缺乏效率。</span></span><br></pre></td></tr></table></figure>
+<h3 id="三、直接继承prototype"><a href="#三、直接继承prototype" class="headerlink" title="三、直接继承prototype"></a>三、直接继承prototype</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在有一个“猫”对象的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 然后Animal对象写成这样：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123; &#125;</span><br><span class="line">Animal.prototype.species = <span class="string">"动物"</span>;</span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">// 第三种方法是对第二种方法的改进，</span></span><br><span class="line"><span class="comment">// 然后将Cat的prototype对象，指向Animal的prototype对象，这样就完成了继承</span></span><br><span class="line">Cat.prototype = Animal.prototype;</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(cat1.species);</span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">// 优点：相比第二种效率更高，比较省内存</span></span><br><span class="line"><span class="comment">// 缺点：Cat.prototype = Animal.prototype; 这句实际上将Cat.prototype和Animal.prototype这两个对象指向了同一个对象（在内存上的地址），</span></span><br><span class="line"><span class="comment">// 然后，Cat.prototype.constructor = Cat;这句实际上把Animal.prototype对象的constructor属性也改掉了！</span></span><br><span class="line"><span class="built_in">console</span>.log(Animal.prototype.constructor); <span class="comment">// Cat</span></span><br></pre></td></tr></table></figure>
+<h3 id="四、利用空对象作为中介"><a href="#四、利用空对象作为中介" class="headerlink" title="四、利用空对象作为中介"></a>四、利用空对象作为中介</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在有一个“猫”对象的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 然后Animal对象写成这样：</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123; &#125;</span><br><span class="line">Animal.prototype.species = <span class="string">"动物"</span>;</span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">// 由于“直接继承prototype”存在上述的缺点，所以就有了第四种方法，利用一个空对象作为中介</span></span><br><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">F.prototype = Animal.prototype;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> F();</span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>, <span class="string">"黄色"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(cat1.species); <span class="comment">// 动物</span></span><br><span class="line"><span class="comment">// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span><br><span class="line"><span class="comment">// F是空对象，所以几乎不占内存。这时，修复Cat的prototype对象，就不会影响到Animal的prototype对象。</span></span><br><span class="line"><span class="built_in">console</span>.log(Animal.prototype.constructor); <span class="comment">// Animal</span></span><br></pre></td></tr></table></figure>
+<h3 id="五、拷贝继承"><a href="#五、拷贝继承" class="headerlink" title="五、拷贝继承"></a>五、拷贝继承</h3><p>上面是采用prototype对象，实现继承。我们也可以换一种思路，纯粹采用”拷贝”方法实现继承。简单说，如果把父对象的所有属性和方法，拷贝进子对象，不也能够实现继承吗？这样我们就有了第五种方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 现在有一个“猫”对象的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先，还是把Animal的所有不变属性，都放到它的prototype对象上。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Animal.prototype.species = <span class="string">"动物"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>然后，再写一个函数，实现属性拷贝的目的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend2</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> p = Parent.prototype;</span><br><span class="line">    <span class="keyword">var</span> c = Child.prototype;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</span><br><span class="line">        c[i] = p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 下面这一句的意思是为子对象设一个uber属性，这个属性直接指向父对象的prototype属性。（uber是一个德语词，意思是"向上"、"上一层"。）这等于在子对象上打开一条通道，可以直接调用父对象的方法。这一行放在这里，只是为了实现继承的完备性，纯属备用性质。</span></span><br><span class="line">    c.uber = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个函数的作用，就是将父对象的prototype对象中的属性，一一拷贝给Child对象的prototype对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">extend2(Cat, Animal);</span><br><span class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</span><br><span class="line">alert(cat1.species); <span class="comment">// 动物</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/categories/前端/JS/面向对象编程（二）：构造函数的继承_对象之间继承的五种方法/" data-id="cjj9o06lz006makappgxaisp4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/categories/前端/CSS/CSS一般性重要概念/面向对象编程（一）：封装/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          面向对象编程（一）：封装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/categories/前端/JS/国内各大浏览器的内核/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">国内各大浏览器的内核</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JAVA基础/">JAVA基础</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/AJAX/">AJAX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/BOOTSTRAP/">BOOTSTRAP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS未解决的怪问题/">CSS未解决的怪问题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/DOM/">DOM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/">JQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/自己写的练习/">自己写的练习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JavaScript基础/">JavaScript基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/一些经验/">一些经验</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/前端基础/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/常见问题/">常见问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/我遇到的问题/">我遇到的问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/简历/">简历</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/">快捷键</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/vscode快捷键/">vscode快捷键</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/我的快捷键配置/">我的快捷键配置</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/学习ES6：Class的继承/">学习ES6：Class的继承</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/VSCode中使用Git实践，学会了效率翻倍/">VSCode中使用Git实践，学会了效率翻倍</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/一些经验/关于Mac上的VSCode编写Markdown会出现不可见字符问题/">关于Mac上的VSCode编写Markdown会出现不可见字符问题</a>
+          </li>
+        
+          <li>
+            <a href="/categories/uncategorized/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/JS/面向对象编程（三）：非构造函数的继承-对象之间继承的三种方法/">面向对象编程（三）：非构造函数的继承_对象之间继承的三种方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Huang Jian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

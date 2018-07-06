@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavascriptDOM | 黄健个人技术小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1">
+  <meta name="description" content="DOM 是Document Object Model( 文档对象模型 )的缩写。DOM是把html里面的各种数据当作对象进行操作的一种思路。比如一个超链，作为一个DOM对象，就可以使其隐藏，修改其href指向的地址。 节点概念 DOM把所有的html都装换为节点整个文档 是一个节点元素 是节点元素属性 是节点元素内容 是节点注释 也是节点12345678910111213141516171819&amp;">
+<meta name="keywords" content="关键词">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavascriptDOM">
+<meta property="og:url" content="http://yoursite.com/categories/前端/JavaScript基础/JavascriptDOM/index.html">
+<meta property="og:site_name" content="黄健个人技术小站">
+<meta property="og:description" content="DOM 是Document Object Model( 文档对象模型 )的缩写。DOM是把html里面的各种数据当作对象进行操作的一种思路。比如一个超链，作为一个DOM对象，就可以使其隐藏，修改其href指向的地址。 节点概念 DOM把所有的html都装换为节点整个文档 是一个节点元素 是节点元素属性 是节点元素内容 是节点注释 也是节点12345678910111213141516171819&amp;">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-06-10T05:08:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavascriptDOM">
+<meta name="twitter:description" content="DOM 是Document Object Model( 文档对象模型 )的缩写。DOM是把html里面的各种数据当作对象进行操作的一种思路。比如一个超链，作为一个DOM对象，就可以使其隐藏，修改其href指向的地址。 节点概念 DOM把所有的html都装换为节点整个文档 是一个节点元素 是节点元素属性 是节点元素内容 是节点注释 也是节点12345678910111213141516171819&amp;">
+  
+    <link rel="alternate" href="/atom.xml" title="黄健个人技术小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">黄健个人技术小站</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Work hard every weekday, have fun every weekend!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">categories</a>
+        
+          <a class="main-nav-link" href="/tags">tags</a>
+        
+        
+        <a href="/"> Home </a>
+        
+        <a href="/archives/"> Archives </a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavascriptDOM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/categories/前端/JavaScript基础/JavascriptDOM/" class="article-date">
+  <time datetime="2018-06-10T05:08:27.000Z" itemprop="datePublished">2018-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>►<a class="article-category-link" href="/categories/前端/JavaScript基础/">JavaScript基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavascriptDOM
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DOM 是Document Object Model( 文档对象模型 )的缩写。<br>DOM是把html里面的各种数据当作对象进行操作的一种思路。<br>比如一个超链，作为一个DOM对象，就可以使其隐藏，修改其href指向的地址。</p>
+<h1 id="节点概念"><a href="#节点概念" class="headerlink" title="节点概念"></a>节点概念</h1><ul>
+<li>DOM把所有的html都装换为节点<br>整个文档 是一个节点<br>元素 是节点<br>元素属性 是节点<br>元素内容 是节点<br>注释 也是节点<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"d1"</span>&gt;</span>hello HTML DOM<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params">s</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="built_in">console</span>.log(s);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"d1"</span>);</span></span><br><span class="line"><span class="javascript">	l(<span class="string">"文档节点"</span>); </span></span><br><span class="line"><span class="javascript">	l(<span class="built_in">document</span>); <span class="comment">// #document</span></span></span><br><span class="line"><span class="javascript">	l(<span class="string">"元素节点"</span>) </span></span><br><span class="line"><span class="xml">	l(div1); // <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"d1"</span>&gt;</span>hello HTML DOM<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="javascript">	l(<span class="string">"属性节点"</span>);</span></span><br><span class="line"><span class="javascript">	l(div1.attributes[<span class="number">0</span>]); <span class="comment">// id="d1"</span></span></span><br><span class="line"><span class="javascript">	l(<span class="string">"内容节点"</span>);</span></span><br><span class="line"><span class="javascript">	l(div1.childNodes[<span class="number">0</span>]); <span class="comment">// "hello HTML DOM"</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h1><p><code>document.getElementById(&quot;d1&quot;)</code><br><code>document.getElementsByTabName(&quot;div&quot;)</code><br><code>document.getElementsByClassName(&quot;d&quot;)</code><br><code>document.getElementsByName(&quot;userName&quot;)</code><br>获取属性节点<br><code>var  div1 = document.getElementById(&quot;d1&quot;);
+var content = div1.childNodes[0];</code><br>获取内容节点<br><code>var  div1 = document.getElementById(&quot;d1&quot;);
+var content = div1.childNodes[0];</code></p>
+<h1 id="节点的属性"><a href="#节点的属性" class="headerlink" title="节点的属性"></a>节点的属性</h1><ul>
+<li>节点的节点属性nodeName表示一个节点的名字<br>div元素节点的节点名称:<code>div.nodeName</code> //DIV</li>
+<li><p>节点的节点属性nodeValue表示一个节点的值<br>document.nodeValue 文档的节点值，是 null<br>div1.nodeValue 元素的节点值，是null<br>div1.attributes[0].nodeValue 属性的节点值，是对应的属性值 d1<br>div1.childNodes[0].nodeValue 内容的节点值，是内容 即： #text</p>
+</li>
+<li><p>nodeType表示一个节点的类型<br>不同的节点类型，对应的节点类型值是不一样的<br>document.nodeType 文档的节点类型，是 9<br>div1.nodeType 元素的节点类型，是 1<br>div1.attributes[0].nodeType 属性的节点类型，是 2<br>div1.childNodes[0].nodeType 内容的节点类型，是 3<br>注释的节点类型是8</p>
+</li>
+<li><p>修改与获取内容的值可以通过 childNodes[0].nodeValue进行<br>还有个简便办法就是通过innerHTML进行。 效果是一样的。</p>
+</li>
+<li><p>元素上的属性，比如id,value 可以通过 . 直接访问他们的值<br>如果是自定义属性，那么可以通过如下两种方式来获取</p>
+</li>
+</ul>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params">arg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="built_in">console</span>.log(arg);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">g</span>(<span class="params">id</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(id);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">return</span> element;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">loadImg</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		message.innerHTML = <span class="string">"图片加载成功"</span></span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="javascript">	<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> moveTimes = <span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> overTimes = <span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> outTimes = <span class="number">0</span>;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> message = g(<span class="string">"message"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> input1 = g(<span class="string">"input1"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> input2 = g(<span class="string">"input2"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button1 = g(<span class="string">"button1"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button2 = g(<span class="string">"button2"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button3 = g(<span class="string">"button3"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button4 = g(<span class="string">"button4"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button5 = g(<span class="string">"button5"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button6 = g(<span class="string">"button6"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button7 = g(<span class="string">"button7"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button8 = g(<span class="string">"button8"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button9 = g(<span class="string">"button9"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> button10 = g(<span class="string">"button10"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> form1 = g(<span class="string">"from1"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> img1 = g(<span class="string">"img1"</span>);</span></span><br><span class="line"><span class="javascript">		<span class="comment">// var body = document.getElementsByTagName("body");</span></span></span><br><span class="line"><span class="javascript">		input1.onblur = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"输入框1失去了焦点"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		input1.onfocus = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"输入框1获得了焦点"</span></span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button1.onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"鼠标按下"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button1.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"鼠标弹起"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button2.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"鼠标移动次数: "</span> + ++moveTimes;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button3.onmouseover = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"鼠标进入次数"</span> + (++overTimes);</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button4.onmouseout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"鼠标离开次数"</span> + ++outTimes;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button5.onkeydown = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"键盘按下down"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button6.onkeypress = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"键盘按下press"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button7.onkeyup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"键盘弹起up"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button8.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"单击按钮"</span>;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		input2.onchange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"输入框2的值变成了: "</span> + input2.value;</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		form1.onsubmit = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			alert(<span class="string">"提交表单"</span>);</span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		img1.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"图片加载成功"</span></span></span><br><span class="line"><span class="undefined">		&#125;;</span></span><br><span class="line"><span class="javascript">		button9.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"被点击的button是: "</span> + <span class="keyword">this</span>.innerHTML;</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="javascript">		button10.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"被点击的button是: "</span> + <span class="keyword">this</span>.innerHTML;</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="javascript">		button11.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">			message.innerHTML = <span class="string">"被点击的button是: "</span> + <span class="keyword">this</span>.innerHTML;</span></span><br><span class="line"><span class="javascript">			<span class="built_in">console</span>.log(<span class="keyword">this</span>);</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"input1"</span> <span class="attr">value</span>=<span class="string">"输入框1"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button1"</span>&gt;</span>用于演示按下和弹起来<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button2"</span>&gt;</span>用于演示鼠标经过<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button3"</span>&gt;</span>用于经过鼠标进入<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button4"</span>&gt;</span>用于经过鼠标退出<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>记得要先用鼠标选择该组件,然后敲击键盘<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button5"</span>&gt;</span>用于演示键盘按下keydown<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button6"</span>&gt;</span>用于演示键盘按下keypress<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button7"</span>&gt;</span>用于演示键盘弹起up<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>注1: 在组件上，按下空格或则回车键也可以造成单击的效果，但是却不能造成双击的效果</span><br><span class="line">		<span class="tag">&lt;<span class="name">br</span>&gt;</span>注2: 自定义函数不要使用click()，这是保留函数名。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button8"</span>&gt;</span>用于演示单击和双击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>当组件的值发生变化的时候，会触发onchange事件</span><br><span class="line">		<span class="tag">&lt;<span class="name">br</span>&gt;</span>注：对于输入框而言，只有在失去焦点的时候，才会触发onchange，所以需要点击一下"按钮" 造成输入框失去焦点<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"input2"</span> <span class="attr">value</span>=<span class="string">"输入框2"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>可以在form元素上，监听提交事件,当form元素@提交的时候，会触发onsubmit事件,本例使用 提交账号密码 来进行演示<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/study/login.jsp"</span> <span class="attr">onsubmit</span>=<span class="string">"login()"</span> <span class="attr">id</span>=<span class="string">"from1"</span>&gt;</span></span><br><span class="line">		账号:</span><br><span class="line">		<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">br</span>&gt;</span> 密码:</span><br><span class="line">		<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://how2j.cn/example.gif"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"img1"</span> <span class="attr">onload</span>=<span class="string">"loadImg()"</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button9"</span>&gt;</span>演示this的按钮1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button10"</span>&gt;</span>演示this的按钮2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button11"</span>&gt;</span>演示this的按钮3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>当前组件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"singleClick(this)"</span> <span class="attr">value</span>=<span class="string">"演示this的按钮1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"singleClick(this)"</span> <span class="attr">value</span>=<span class="string">"演示this的按钮2"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="function"><span class="keyword">function</span> <span class="title">singleClick</span>(<span class="params">button</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">var</span> s = <span class="string">"被点击的按钮上的文本是: "</span> + button.value;</span></span><br><span class="line"><span class="javascript">		<span class="built_in">document</span>.getElementById(<span class="string">"message"</span>).innerHTML = s;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>节点关系<br>childNodes和children都可以获取一个元素节点的子节点。<br>childNodes 会包含文本节点<br>children 会排除文本节点 </p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/categories/前端/JavaScript基础/JavascriptDOM/" data-id="cjj9o06er000vakap7lii4jcg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/categories/前端/JSON/JSON/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JSON
+        
+      </div>
+    </a>
+  
+  
+    <a href="/categories/前端/JavaScript基础/JavascriptBOM/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavascriptBOM</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HEXO/">HEXO</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JAVA基础/">JAVA基础</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/AJAX/">AJAX</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/BOOTSTRAP/">BOOTSTRAP</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/">CSS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS一般性重要概念/">CSS一般性重要概念</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/CSS/CSS未解决的怪问题/">CSS未解决的怪问题</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/DOM/">DOM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/ES6/">ES6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/">JQuery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JQuery/自己写的练习/">自己写的练习</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/JavaScript基础/">JavaScript基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/一些经验/">一些经验</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/前端基础/">前端基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/常见问题/">常见问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/我遇到的问题/">我遇到的问题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/简历/">简历</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/">快捷键</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/vscode快捷键/">vscode快捷键</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/快捷键/我的快捷键配置/">我的快捷键配置</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css怪问题/">css怪问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我的笔记/">我的笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/学习ES6：Class的继承/">学习ES6：Class的继承</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/CSS/CSS一般性重要概念/VSCode中使用Git实践，学会了效率翻倍/">VSCode中使用Git实践，学会了效率翻倍</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/一些经验/关于Mac上的VSCode编写Markdown会出现不可见字符问题/">关于Mac上的VSCode编写Markdown会出现不可见字符问题</a>
+          </li>
+        
+          <li>
+            <a href="/categories/uncategorized/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/categories/前端/JS/面向对象编程（三）：非构造函数的继承-对象之间继承的三种方法/">面向对象编程（三）：非构造函数的继承_对象之间继承的三种方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Huang Jian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">tags</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
